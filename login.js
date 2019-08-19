@@ -51,7 +51,7 @@ function getInfo(e) {
     for (let i = 0; i < itemsArray.length; i++) {
         if (loginMail.value == itemsArray[i].email && loginPass.value == itemsArray[i].password) {
             console.log(loginMail.value + " logged in!!!");
-            location.href = "http://google.com";
+            location.href = "index.html";
             return
         }
         let errLogin = document.getElementById("errLogin");

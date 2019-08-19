@@ -39,6 +39,8 @@ return;
     itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
+    location.href = "login.html";
+
 
 
 // var testing = {
@@ -47,7 +49,7 @@ return;
 // }
 // console.log(testing)
 //
-})
+});
 
 // const userData = {
 //     "username": "asfasf",
