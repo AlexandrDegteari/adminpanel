@@ -1,6 +1,5 @@
 const form = document.querySelector('form');
 const input = document.getElementById("exampleFirstName");
-const input2 = document.getElementById("exampleLastName");
 const input3 = document.getElementById("exampleInputEmail");
 const input4 = document.getElementById("exampleInputPassword");
 const input5 = document.getElementById("exampleRepeatPassword");
@@ -41,5 +40,5 @@ form.addEventListener('submit', function (e) {
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
 
-
+location.href = "login.html"
 })
