@@ -9,7 +9,12 @@ let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    id++;
+    for (var i = 0 ; i<itemsArray.length; i++){
+        if(input3.value == itemsArray[i].email){
+return
+        }else {
+            console.log("no");
+        }}
     localStorage.setItem('id', JSON.stringify(id));
     let newItem = {
         username: input.value,
@@ -18,25 +23,21 @@ form.addEventListener('submit', function (e) {
         password: input4.value,
         id
     };
-itemsArray.push(newItem);
+    id++;
+
+    itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
 
-    if (newItem.email === newItem.email){
-console.log("nu");
-    }else{
 
-        console.log(newItem.email);
-    }
-    // function emailExists({email}, itemsArray) {
-    //     return itemsArray.some(data => data.email === email)
-    // }
-    // console.log(emailExists({Email:input3.value}, itemsArray))
 
-// console.log(emailExists(input3.value, itemsArray));
-//  if(emailExists({Email:input3.value}, itemsArray) === true){
-//      console.log("nu fi debil")
-//  }
+
+// var testing = {
+//     test: () =>
+//         emailExists({email: newItem}, itemsArray)
+// }
+// console.log(testing)
+//
 })
 
 // const userData = {
