@@ -45,10 +45,13 @@
               </div>
               <div class="form-group">
                 <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" required>
+                <p id="errEmail" style="color: red ; display: none">Email is already being used</p>
               </div>
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                   <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required minlength="8">
+                  <p id="errPass" style="color: red ; display: none">Passwords do not match</p>
+
                 </div>
                 <div class="col-sm-6">
                   <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" required minlength="8">
