@@ -33,7 +33,7 @@ form.addEventListener('submit', function (e) {
         console.log("nu")
     }
     console.log(localStorage.getItem("items"))
-})
+});
 
 
 const userData = {
@@ -66,7 +66,7 @@ const existingData = [
         "password": "xdcfvgbhnjmk",
         "id": 7
     }
-]
+];
 
 function emailExists({email}, existingData) {
     return existingData.some(data => data.email === email)
