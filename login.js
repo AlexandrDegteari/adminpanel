@@ -23,4 +23,4 @@ function getInfo(e) {
 }
 
 var logUser = loginMail.value;
-export default logUser;
+// export default logUser;
