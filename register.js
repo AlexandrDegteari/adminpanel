@@ -21,11 +21,17 @@ form.addEventListener('submit', function (e) {
 itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
-debug
-    function emailExists({email}, itemsArray) {
-        return itemsArray.some(data => data.email === email)
+
+    if (newItem.email === newItem.email){
+console.log("nu");
+    }else{
+
+        console.log(newItem.email);
     }
-    console.log(emailExists({Email:input3.value}, itemsArray))
+    // function emailExists({email}, itemsArray) {
+    //     return itemsArray.some(data => data.email === email)
+    // }
+    // console.log(emailExists({Email:input3.value}, itemsArray))
 
 // console.log(emailExists(input3.value, itemsArray));
 //  if(emailExists({Email:input3.value}, itemsArray) === true){
