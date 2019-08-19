@@ -3,18 +3,29 @@ const input = document.getElementById("exampleFirstName");
 const input2 = document.getElementById("exampleLastName");
 const input3 = document.getElementById("exampleInputEmail");
 const input4 = document.getElementById("exampleInputPassword");
+const input5 = document.getElementById("exampleRepeatPassword");
+const errEmail = document.getElementById("errEmail");
+const errPass = document.getElementById("errPass");
 let id = localStorage.getItem('id') ? localStorage.getItem('id') : 0;
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (input4.value !== input5.value){
+errPass.style.display = "block";
+        return;
+    }else{
+        errPass.style.display = "none";
+    }
     for (var i = 0 ; i<itemsArray.length; i++){
         if(input3.value == itemsArray[i].email){
-return
+            errEmail.style.display = "block";
+return;
         }else {
-            console.log("no");
+            errEmail.style.display = "none"
         }}
+
     localStorage.setItem('id', JSON.stringify(id));
     let newItem = {
         username: input.value,
@@ -28,8 +39,6 @@ return
     itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
-
-
 
 
 // var testing = {
