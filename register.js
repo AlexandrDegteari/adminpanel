@@ -23,7 +23,6 @@ form.addEventListener('submit', function (e) {
 
     console.log(itemsArray);
     console.log(newItem);
-    return;
     itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
@@ -33,89 +32,89 @@ form.addEventListener('submit', function (e) {
         console.log("nu")
     }
     console.log(localStorage.getItem("items"))
-})
+});
 
 
-const userData = {
-    "username": "asfasf",
-    "User2": "wqrwqw",
-    "email": "paul.talmaci@gmail.com",
-    "password": "rftgyhujk",
-    "id": 7
-};
+// const userData = {
+//     "username": "asfasf",
+//     "User2": "wqrwqw",
+//     "email": "paul.talmaci@gmail.com",
+//     "password": "rftgyhujk",
+//     "id": 7
+// };
 
-const existingData = [
-    {
-        "username": "22323",
-        "User2": "2323",
-        "email": "paul.talmaci@gmail.com",
-        "password": "23232323",
-        "id": 5
-    },
-    {
-        "username": "asfsafs",
-        "User2": "wqrwqw",
-        "email": "paul.talmaci@gmail.com2",
-        "password": "xdcfvgbhnjmk",
-        "id": 6
-    },
-    {
-        "username": "asfsafs",
-        "User2": "wqrwqw",
-        "email": "banan",
-        "password": "xdcfvgbhnjmk",
-        "id": 7
-    }
-]
+// const existingData = [
+//     {
+//         "username": "22323",
+//         "User2": "2323",
+//         "email": "paul.talmaci@gmail.com",
+//         "password": "23232323",
+//         "id": 5
+//     },
+//     {
+//         "username": "asfsafs",
+//         "User2": "wqrwqw",
+//         "email": "paul.talmaci@gmail.com2",
+//         "password": "xdcfvgbhnjmk",
+//         "id": 6
+//     },
+//     {
+//         "username": "asfsafs",
+//         "User2": "wqrwqw",
+//         "email": "banan",
+//         "password": "xdcfvgbhnjmk",
+//         "id": 7
+//     }
+// ];
 
-function emailExists({email}, existingData) {
-    return existingData.some(data => data.email === email)
-}
-
-
-const tests = [
-    {
-        expectedValue: true,
-        description: 'first item',
-        test: () =>
-            emailExists(userData, existingData)
-    },
-    {
-        expectedValue: false,
-        description: 'new email',
-        test: () =>
-            emailExists({email: 'lol'}, existingData)
-    },
-    {
-        expectedValue: true,
-        description: 'second item',
-        test: () =>
-            emailExists({email: 'paul.talmaci@gmail.com2'}, existingData)
-    },
-    {
-        expectedValue: false,
-        description: 'empty array',
-        test: () =>
-            emailExists(userData, [])
-    },
-];
-
-function runTests(tests) {
-    let hasErrors = false;
-    for (const test of tests) {
-
-        let result = test.test();
-        if (result !== test.expectedValue) {
-            hasError = true;
-            console.error('Error expected', test.expectedValue, 'got', result, ' in test "' + test.description + '"');
-        }
-
-
-    }
-
-    if (!hasErrors) {
-        console.log('YOURE AGENIUS! ALL TESTS PASS');
-    }
-}
-
-runTests(tests);
+// function emailExists({email}, existingData) {
+//     return existingData.some(data => data.email === email)
+// }
+//
+//
+// const tests = [
+//     {
+//         expectedValue: true,
+//         description: 'first item',
+//         test: () =>
+//             emailExists(userData, existingData)
+//     },
+//     {
+//         expectedValue: false,
+//         description: 'new email',
+//         test: () =>
+//             emailExists({email: 'lol'}, existingData)
+//     },
+//     {
+//         expectedValue: true,
+//         description: 'second item',
+//         test: () =>
+//             emailExists({email: 'paul.talmaci@gmail.com2'}, existingData)
+//     },
+//     {
+//         expectedValue: false,
+//         description: 'empty array',
+//         test: () =>
+//             emailExists(userData, [])
+//     },
+// ];
+//
+// function runTests(tests) {
+//     let hasErrors = false;
+//     for (const test of tests) {
+//
+//         let result = test.test();
+//         if (result !== test.expectedValue) {
+//             hasError = true;
+//             console.error('Error expected', test.expectedValue, 'got', result, ' in test "' + test.description + '"');
+//         }
+//
+//
+//     }
+//
+//     if (!hasErrors) {
+//         console.log('YOURE AGENIUS! ALL TESTS PASS');
+//     }
+// }
+//
+// runTests(tests);
