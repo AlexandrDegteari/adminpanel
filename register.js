@@ -7,11 +7,14 @@ let id = localStorage.getItem('id') ? localStorage.getItem('id') : 0;
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-
-localStorage.setItem('items', JSON.stringify(itemsArray));
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    id++;
+    for (var i = 0 ; i<itemsArray.length; i++){
+        if(input3.value == itemsArray[i].email){
+return
+        }else {
+            console.log("no");
+        }}
     localStorage.setItem('id', JSON.stringify(id));
     let newItem = {
         username: input.value,
@@ -20,20 +23,22 @@ form.addEventListener('submit', function (e) {
         password: input4.value,
         id
     };
+    id++;
 
-    console.log(itemsArray);
-    console.log(newItem);
     itemsArray.push(newItem);
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
 
 
-    if (input.value === localStorage.getItem("items")) {
-        console.log("nu")
-    }
-    console.log(localStorage.getItem("items"))
-});
 
+
+// var testing = {
+//     test: () =>
+//         emailExists({email: newItem}, itemsArray)
+// }
+// console.log(testing)
+//
+})
 
 // const userData = {
 //     "username": "asfasf",
@@ -42,7 +47,7 @@ form.addEventListener('submit', function (e) {
 //     "password": "rftgyhujk",
 //     "id": 7
 // };
-
+//
 // const existingData = [
 //     {
 //         "username": "22323",
@@ -65,13 +70,13 @@ form.addEventListener('submit', function (e) {
 //         "password": "xdcfvgbhnjmk",
 //         "id": 7
 //     }
-// ];
-
+// ]
+//
 // function emailExists({email}, existingData) {
 //     return existingData.some(data => data.email === email)
 // }
 //
-//
+
 // const tests = [
 //     {
 //         expectedValue: true,
@@ -117,4 +122,4 @@ form.addEventListener('submit', function (e) {
 //     }
 // }
 //
-// runTests(tests);
+// runTests(tests)
