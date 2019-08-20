@@ -1,0 +1,39 @@
+
+div > form > input {
+    padding: 6px 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+
+}
+
+div > form > input:focus {
+    border: 3px solid #555;
+}
+
+.form-input-user {
+    position: relative;
+    left: 20%;
+}
+
+#tableArticole {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+
+}
+
+td {
+    text-align: center;
+    overflow: auto;
+    width: 33%;
+    font-family: "Arial Black";
+}
+
+.delete {
+    display: block;
+    margin: 0 auto;
+}
