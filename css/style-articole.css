@@ -1,5 +1,4 @@
-
-div > form > input {
+form > div > div input {
     padding: 6px 12px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -7,29 +6,34 @@ div > form > input {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
-
+    border-radius: 25px;
+    width: 80%;
+    text-align: center;
 }
 
-div > form > input:focus {
+form > div > div > input:focus {
     border: 3px solid #555;
 }
 
-.form-input-user {
-    position: relative;
-    left: 20%;
+.marginInput {
+    margin-left: 15px;
 }
 
-#tableArticole {
+.marginButtonReset , .marginButtonAddTable{
+    margin: 15px;
+}
+#tableUsers {
     width: 80%;
-    margin-right: 10%;
     margin-left: 10%;
 
 }
 
 td {
     text-align: center;
-    overflow: auto;
-    width: 33%;
+    /*overflow: auto;*/
+    /*width: 150px;*/
+    /*height: 50px;*/
+    /*padding: 5px;*/
     font-family: "Arial Black";
 }
 

@@ -1,18 +1,31 @@
-let nameArticol = document.getElementById("name");
-let descriptionArticol = document.getElementById("description");
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let id = document.getElementById("id");
 let addTable = document.getElementById("addTable");
-let tableArticole = document.getElementById("tableArticole");
+let tableUsers = document.getElementById("tableUsers");
 
 addTable.addEventListener("click", function createElementInTable() {
-    if (nameArticol.value.length && descriptionArticol.value.length > 0) {
+    if (firstName.value.length && lastName.value.length > 0) {
         let createTr = document.createElement("tr");
-        tableArticole.appendChild(createTr);
-        let createTdName = document.createElement("td");
-        createTr.appendChild(createTdName);
-        createTdName.innerHTML = nameArticol.value;
-        let createTdDescription = document.createElement("td");
-        createTr.appendChild(createTdDescription);
-        createTdDescription.innerHTML = descriptionArticol.value;
+        tableUsers.appendChild(createTr);
+        let createTdFirstName = document.createElement("td");
+        createTr.appendChild(createTdFirstName);
+        createTdFirstName.innerHTML = firstName.value;
+        let createTdLastName = document.createElement("td");
+        createTr.appendChild(createTdLastName);
+        createTdLastName.innerHTML = lastName.value;
+        let createTdEmail = document.createElement("td");
+        createTr.appendChild(createTdEmail);
+        createTdEmail.innerHTML = email.value;
+        let createTdPassword = document.createElement("td");
+        createTr.appendChild(createTdPassword);
+        createTdPassword.innerHTML = password.value;
+        let createTdId = document.createElement("td");
+        createTr.appendChild(createTdId);
+        createTdId.innerHTML = id.value;
+
         let createTdButton = document.createElement("td");
         createTr.appendChild(createTdButton);
         let createDeleteButton = document.createElement("button");
