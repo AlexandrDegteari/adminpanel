@@ -6,22 +6,18 @@ const pass = document.getElementById("exampleInputPassword");
 const passConf = document.getElementById("exampleRepeatPassword");
 const errEmail = document.getElementById("errEmail");
 const errPass = document.getElementById("errPass");
-let id = localStorage.getItem('id') ? +localStorage.getItem('id') : 0;
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    id++;
-
     if (pass.value !== passConf.value) {
         errPass.style.display = "block";
         return;
     } else {
         errPass.style.display = "none";
     }
-    for (let i = 0; i < itemsArray.length; i++) {
+    for (var i = 0; i < itemsArray.length; i++) {
         if (email.value == itemsArray[i].email) {
             errEmail.style.display = "block";
             return;
@@ -31,17 +27,23 @@ form.addEventListener('submit', function (e) {
     }
     let newItem = {
         username: firstName.value,
-        User2: lastName.value,
+        // User2: lastName.value,
         email: email.value,
-        password: pass.value,
-        id
-
+        password: pass.value
     };
 
-    localStorage.setItem('id', JSON.stringify(newItem.id));
-    itemsArray.push(newItem);
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8100/users/register",
+        data: newItem,
+        success: function (response) {
+            location.href = "login.html"
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    });
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
 
-    // location.href = "login.html"
-});
+})
