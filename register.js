@@ -6,7 +6,6 @@ const pass = document.getElementById("exampleInputPassword");
 const passConf = document.getElementById("exampleRepeatPassword");
 const errEmail = document.getElementById("errEmail");
 const errPass = document.getElementById("errPass");
-let id = localStorage.getItem('id') ? localStorage.getItem('id') : 0;
 
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
@@ -26,20 +25,25 @@ form.addEventListener('submit', function (e) {
             errEmail.style.display = "none"
         }
     }
-
-    localStorage.setItem('id', JSON.stringify(id));
     let newItem = {
         username: firstName.value,
-        User2: lastName.value,
+        // User2: lastName.value,
         email: email.value,
-        password: pass.value,
-        id
+        password: pass.value
     };
-    id++;
 
-    itemsArray.push(newItem);
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:8100/users/register",
+        data: newItem,
+        success: function (response) {
+            location.href = "login.html"
+        },
+        error: function (err) {
+            console.log(err)
+        }
+    });
 
     localStorage.setItem('items', JSON.stringify(itemsArray));
 
-location.href = "login.html"
 })
