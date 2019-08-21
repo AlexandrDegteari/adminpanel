@@ -25,6 +25,7 @@ form > div > div > input:focus {
 #tableUsers {
     width: 80%;
     margin-left: 10%;
+    overflow: scroll;
 
 }
 

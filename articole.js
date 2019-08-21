@@ -6,8 +6,14 @@ let id = document.getElementById("id");
 let addTable = document.getElementById("addTable");
 let tableUsers = document.getElementById("tableUsers");
 
+
 addTable.addEventListener("click", function createElementInTable() {
-    if (firstName.value.length && lastName.value.length > 0) {
+    if ((firstName.value.length && lastName.value.length && email.value.length && password.value.length && id.value.length) > 0
+        &&
+        (firstName.value && lastName.value && email.value && password.value && id.value) !== " "
+        &&
+        $('#email').val().indexOf('@') >= 0
+    ) {
         let createTr = document.createElement("tr");
         tableUsers.appendChild(createTr);
         let createTdFirstName = document.createElement("td");
@@ -25,7 +31,6 @@ addTable.addEventListener("click", function createElementInTable() {
         let createTdId = document.createElement("td");
         createTr.appendChild(createTdId);
         createTdId.innerHTML = id.value;
-
         let createTdButton = document.createElement("td");
         createTr.appendChild(createTdButton);
         let createDeleteButton = document.createElement("button");
@@ -36,6 +41,6 @@ addTable.addEventListener("click", function createElementInTable() {
             createTr.remove()
         });
     } else {
-        alert("Introduceti Name & Description");
+        alert("Error");
     }
 });
